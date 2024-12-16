@@ -14,8 +14,9 @@ app.post('/signup', async (req, res) => {
     const { username, password, email } = req.body;
     try {
         // バックエンドにリクエスト転送
+        const name = username
         const response = await axios.post('http://127.0.0.1:8000/api/signup', {
-            username,
+            name,
             password,
             email
         })
